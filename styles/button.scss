@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+.button {
+    text-align: center;
+  
+    font-family: $font-family;
+    letter-spacing: $letter-spacing;
+  
+    padding: 1em;
+    margin: 1em;
+  
+    background-color: transparent;
+  
+    border: 1px solid $sky-blue-crayola;
+    border-radius: 0.5em;
+  
+    width: 10em;
+  
+    &:hover {
+      background-color: $sky-blue-crayola;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  

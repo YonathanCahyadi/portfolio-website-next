@@ -1,0 +1,27 @@
+@import "./variables.scss";
+
+.error-container {
+  display: flex;
+  padding: 10em;
+
+  align-items: center;
+  flex-direction: column;
+
+  .error-img-container {
+    max-width: 100%;
+
+    height: auto;
+    width: auto;
+    
+    justify-content: space-evenly;
+  }
+  Button {
+    margin: 5em;
+  }
+}
+
+@media (max-width: $mobile) {
+  .error-img-container {
+    width: 100%;
+  }
+}
