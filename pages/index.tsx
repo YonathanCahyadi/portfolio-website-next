@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { motion } from "framer-motion";
 import Wave from "../components/Wave";
-import Button from "../components/Button";
+import ButtonLink from "../components/ButtonLink";
 import { FadeIn, FadeInAndGoUp, GoUp, ScaleBigger } from "../animations";
 import Meta from "../components/Meta";
 
@@ -61,7 +61,7 @@ export default function Home() {
 
         <div className="buttons-container">
           {pages.map((page, idx) => (
-            <Button
+            <ButtonLink
               animation={FadeInAndGoUp(80, 1, 2 + idx / 3)}
               onHoverAnimation={ScaleBigger()}
               key={idx}

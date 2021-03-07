@@ -19,7 +19,7 @@ const About: React.FC = () => {
     "NextJS",
     "PostgreSQL",
     "MongoDB",
-    "AWS E2C",
+    "AWS EC2",
     "Docker",
     "Git/Github"
   ]
@@ -43,7 +43,7 @@ const About: React.FC = () => {
           <div className="about-text-container">
             <motion.h1 {...FadeInAndRight(0, 2, 1)}>About Me</motion.h1>
             <motion.div {...FadeIn(4)}>
-              My name is Yonathan Cahyadi and I have a Bachelor of Information
+              My name is <b>Yonathan Cahyadi</b> and I have a Bachelor of Information
               Technology (Computer Science) degree. I am a{" "}
               <b>Full Stack Web Developer</b>. For more Information you can
               download my Resume using the button below.

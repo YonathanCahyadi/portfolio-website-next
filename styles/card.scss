@@ -1,0 +1,47 @@
+@import "../styles/variables.scss";
+
+.card-container {
+  margin: 1em;
+
+  outline: 1px solid $star-command-blue;
+
+  max-width: 25ch;
+
+  &:hover {
+    cursor: pointer;
+
+    outline: none;
+    .card-title {
+      background-color: $sky-blue-crayola-2;
+      color: $snow-blue;
+      transition: background-color 0.5s ease;
+    }
+
+    .card-description {
+      background-color: $powder-blue;
+      color: $snow-blue;
+      transition: background-color 0.5s ease;
+    }
+  }
+
+  .card-title {
+    padding: 1em;
+
+    background-color: $powder-blue;
+  }
+
+  .card-description {
+    background-color: $snow-blue;
+
+    padding: 1em;
+
+    min-height: 7em;
+    max-height: 7em;
+
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+}

@@ -11,14 +11,14 @@
 
   background-color: transparent;
 
-  border: 1px solid $sky-blue-crayola;
+  border: 1px solid $sky-blue-crayola-2;
   border-radius: 0.5em;
 
   width: 10em;
 
   &:hover {
-    background-color: $sky-blue-crayola;
-    color: #fff;
+    background-color: $sky-blue-crayola-2;
+    color: $snow-blue;
     cursor: pointer;
   }
 
@@ -32,8 +32,6 @@
     
 
     .button-img {
-
-
       max-width: 2em;
       max-height: 2em;
     }

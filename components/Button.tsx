@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface ButtonProps {
@@ -10,17 +9,22 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   name,
-  href,
+  href: documentPath,
   animation,
   onHoverAnimation
 }) => {
   return (
     <motion.div {...animation}>
-      <Link href={href}>
-        <motion.button whileHover={{ ...onHoverAnimation }} className="button">
-          {name}
-        </motion.button>
-      </Link>
+      <motion.button
+        type="submit"
+        onClick={() => window.open(documentPath)}
+        whileHover={{ ...onHoverAnimation }}
+        className="button"
+      >
+        <div className="button-inside-container">
+          <div className="button-text">{name}</div>
+        </div>
+      </motion.button>
     </motion.div>
   );
 };

@@ -1,9 +1,13 @@
+import { motion } from "framer-motion";
 import Content from "../../components/Content";
 import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import Meta from "../../components/Meta";
+import { FadeInAndUp, FadeInAndRight } from "../../animations";
+import ProjectsData from "../../data/projects.json";
+import Card from "../../components/Card";
 
-const About: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     <div>
       <Head>
@@ -13,14 +17,32 @@ const About: React.FC = () => {
           keywords={["Yonathan Cahyadi", "Projects"]}
         />
 
-        <title>Yonathan Cahyadi - About</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Yonathan Cahyadi - Projects</title>
+        <link rel="icon" href="../assets/favicon.ico" />
       </Head>
       <Navbar selected="Projects" />
 
-      <Content>Projects</Content>
+      <Content>
+        <div className="projects-container">
+          <div className="projects-inner-container">
+            <motion.h1 {...FadeInAndRight(0, 2, 1)}>Projects</motion.h1>
+
+            <div className="projects-cards-container">
+              {ProjectsData.map((project, idx) => (
+                <motion.div key={`project-${idx}`} {...FadeInAndUp(0, 1, 1  + (idx / 5))}>
+                  <Card
+                    href={`/projects/${idx}`}
+                    title={project.name}
+                    description={project.description}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Content>
     </div>
   );
 };
 
-export default About;
+export default Projects;

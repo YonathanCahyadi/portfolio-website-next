@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import ButtonLink from "../components/ButtonLink";
 import { ScaleBigger } from "../animations";
 
 export default function FourOFour() {
@@ -176,7 +176,7 @@ export default function FourOFour() {
           />
         </svg>
       </div>
-      <Button onHoverAnimation={ScaleBigger()} name="Go Home" href="/" />
+      <ButtonLink onHoverAnimation={ScaleBigger()} name="Go Home" href="/" />
     </div>
   );
 }
