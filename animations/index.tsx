@@ -1,7 +1,7 @@
-export const FadeIn = (duration: number = 1) => ({
+export const FadeIn = (duration: number = 1, delay: number = 0) => ({
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: duration }
+  transition: { duration: duration, delay: delay }
 });
 
 export const GoUp = (
