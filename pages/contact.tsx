@@ -18,6 +18,7 @@ const isEmpty = (string: string) => {
   return string.length === 0 || !string.trim();
 };
 
+// still need to fix the valid message show up
 const Contact: React.FC = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
