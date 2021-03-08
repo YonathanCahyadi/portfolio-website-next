@@ -23,9 +23,9 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
-  const [validEmail, setValidEmail] = useState(false);
-  const [validSubject, setValidSubject] = useState(false);
-  const [validMessage, setValidMessage] = useState(false);
+  const [validEmail, setValidEmail] = useState(true);
+  const [validSubject, setValidSubject] = useState(true);
+  const [validMessage, setValidMessage] = useState(true);
 
   const [submitButtonDisable, setSubmitButtonDisable] = useState(false);
 
