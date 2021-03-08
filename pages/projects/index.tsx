@@ -3,7 +3,7 @@ import Content from "../../components/Content";
 import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import Meta from "../../components/Meta";
-import { FadeInAndUp, FadeInAndRight } from "../../animations";
+import { FadeInAndUp, FadeInAndRight, ScaleBigger } from "../../animations";
 import ProjectsData from "../../data/projects.json";
 import Card from "../../components/Card";
 

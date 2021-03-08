@@ -22,6 +22,12 @@
     cursor: pointer;
   }
 
+  &:disabled {
+    background-color: $sky-blue-crayola-2;
+    color: $snow-blue;
+    cursor: not-allowed;
+  }
+
   .button-inside-container {
 
     display: flex;
@@ -36,8 +42,6 @@
       max-height: 2em;
     }
 
-    .button-text {
-
-    }
+    
   }
 }

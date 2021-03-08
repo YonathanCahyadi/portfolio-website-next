@@ -22,7 +22,7 @@ export default function Home() {
     },
     {
       name: "Contacts",
-      href: "/contacts"
+      href: "/contact"
     }
   ];
 

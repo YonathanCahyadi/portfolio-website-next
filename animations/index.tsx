@@ -28,6 +28,10 @@ export const ScaleBigger = () => ({
   scale: 1.1
 });
 
+export const DoNothing = () => ({
+  scale: 0
+});
+
 export const GoDown = (duration: number = 1) => ({
   initial: { y: -100 },
   animate: { y: 0 },

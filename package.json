@@ -9,13 +9,17 @@
     "export": "next export"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "framer-motion": "^3.9.0",
     "next": "10.0.7",
+    "nodemailer": "^6.5.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^14.14.31",
+    "@types/nodemailer": "^6.4.0",
     "@types/react": "^17.0.2",
     "file-loader": "^6.2.0",
     "sass": "^1.32.8",
