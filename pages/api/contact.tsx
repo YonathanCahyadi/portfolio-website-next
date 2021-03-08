@@ -1,3 +1,4 @@
+import { convertTransitionToAnimationOptions } from "framer-motion/types/animation/utils/transitions";
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 
@@ -15,8 +16,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         port: 587,
         secure: false,
         auth: {
-          user: "project.cahyadiyonathan@gmail.com",
-          pass: "gumpgtxppirckmrn"
+          user: process.env.EMAIL,
+          pass: process.env.PASSWORD
         }
       });
 

@@ -5,7 +5,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import { ScaleBigger } from "../animations";
 import { motion } from "framer-motion";
-import { FadeInAndRight, FadeInAndUp } from '../animations';
+import { FadeInAndRight, FadeInAndUp } from "../animations";
+
+const validateEmail = (email: string) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+};
+
+const isEmpty = (string: string) => {
+  return string.length === 0 || !string.trim();
+};
 
 const Contact: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -17,6 +26,37 @@ const Contact: React.FC = () => {
   const [validMessage, setValidMessage] = useState(false);
 
   const [submitButtonDisable, setSubmitButtonDisable] = useState(false);
+
+  const handleEmailChange = (evt: React.FormEvent<HTMLInputElement>) => {
+    const newValue = evt.currentTarget.value;
+
+    // check if its a valid email
+    setValidEmail(false);
+
+    if (validateEmail(newValue)) setValidEmail(true);
+
+    setEmail(newValue);
+  };
+
+  const handleSubjectChange = (evt: React.FormEvent<HTMLInputElement>) => {
+    const newSubject = evt.currentTarget.value;
+
+    setValidSubject(false);
+
+    if (!isEmpty(newSubject)) setValidSubject(true);
+
+    setSubject(newSubject);
+  };
+
+  const handleMessageChange = (evt: React.FormEvent<HTMLTextAreaElement>) => {
+    const newMessage = evt.currentTarget.value;
+
+    setValidMessage(false);
+
+    if (!isEmpty(newMessage)) setValidMessage(true);
+
+    setMessage(newMessage);
+  };
 
   const handleSubmitButton = async (
     evt: React.MouseEvent<HTMLButtonElement>
@@ -53,46 +93,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleEmailChange = (evt: React.FormEvent<HTMLInputElement>) => {
-    const newValue = evt.currentTarget.value;
-
-    // check if its a valid email
-    setValidEmail(false);
-
-    const validateEmail = (email: string) => {
-      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return re.test(String(email).toLowerCase());
-    };
-
-    if (validateEmail(newValue)) setValidEmail(true);
-
-    setEmail(newValue);
-  };
-
-  const isEmpty = (string: string) => {
-    return string.length === 0 || !string.trim();
-  };
-
-  const handleSubjectChange = (evt: React.FormEvent<HTMLInputElement>) => {
-    const newSubject = evt.currentTarget.value;
-
-    setValidSubject(false);
-
-    if (!isEmpty(newSubject)) setValidSubject(true);
-
-    setSubject(newSubject);
-  };
-
-  const handleMessageChange = (evt: React.FormEvent<HTMLTextAreaElement>) => {
-    const newMessage = evt.currentTarget.value;
-
-    setValidMessage(false);
-
-    if (!isEmpty(newMessage)) setValidMessage(true);
-
-    setMessage(newMessage);
-  };
-
   return (
     <div>
       <Navbar selected="Contact" />
@@ -101,7 +101,6 @@ const Contact: React.FC = () => {
         <div className="contact-container">
           <motion.h1 {...FadeInAndRight(0, 2, 1)}>Contact</motion.h1>
           <Form.Wrapper>
-
             <Form.Input
               name="email"
               placeholder="E-mail"
@@ -139,7 +138,6 @@ const Contact: React.FC = () => {
               onHoverAnimation={ScaleBigger()}
               animation={FadeInAndUp(0, 1, 1.8)}
             />
-            
           </Form.Wrapper>
         </div>
       </Content>
