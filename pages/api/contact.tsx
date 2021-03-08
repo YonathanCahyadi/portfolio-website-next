@@ -1,4 +1,3 @@
-import { convertTransitionToAnimationOptions } from "framer-motion/types/animation/utils/transitions";
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
 

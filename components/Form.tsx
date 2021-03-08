@@ -9,7 +9,7 @@ const Wrapper: React.FC = ({ children }) => {
 interface InputProps {
   invalid: boolean;
   invalidMessage: string;
-  animation: object;
+  animation : object;
 }
 
 const Input: React.FC<React.HTMLProps<HTMLInputElement> & InputProps> = ({

@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Meta from "../components/Meta";
 import Navbar from "../components/Navbar";
 import Content from "../components/Content";
 import Form from "../components/Form";
@@ -58,9 +60,7 @@ const Contact: React.FC = () => {
     setMessage(newMessage);
   };
 
-  const handleSubmitButton = async (
-    evt: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  const handleSubmitButton = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();
 
     if (!validEmail || !validSubject || !validMessage) {
@@ -68,33 +68,54 @@ const Contact: React.FC = () => {
     } else {
       setSubmitButtonDisable(true);
 
-      const { data, status } = await axios.post("/api/contact", {
-        email,
-        subject,
-        message
-      });
-
-      if (status === 200) {
-        alert("Email Sended");
-        setSubmitButtonDisable(false);
-      } else if (status === 500) {
-        // error at server
-        alert("There is some error in the Server");
-        setSubmitButtonDisable(false);
-      } else if (status === 400) {
-        // invalid email
-        alert(data.message);
-        setSubmitButtonDisable(false);
-      } else {
-        // other error
-        alert(data.message);
-        setSubmitButtonDisable(false);
-      }
+      axios
+        .post("/api/contact", {
+          email,
+          subject,
+          message
+        })
+        .then(({ data, status }) => {
+          if (status === 200) {
+            alert("Email Sended");
+          } else if (status === 500) {
+            // error at server
+            alert("There is some error in the Server");
+          } else if (status === 400) {
+            // invalid email
+            alert(data.message);
+          } else {
+            // other error
+            alert(data.message);
+          }
+        })
+        .catch((err) => {
+          alert("There is some error in sending request to the Server");
+        })
+        .finally(() => {
+          setSubmitButtonDisable(false);
+        });
     }
   };
 
   return (
     <div>
+      <Head>
+        <Meta
+          title="Yonathan Cahyadi - Contact"
+          description="This is a Contact page regarding Yonathan Cahyadi, here you can contact Yonathan Cahyadi."
+          keywords={[
+            "Yonathan Cahyadi",
+            "Contact",
+            "Contact",
+            "LinkedIn",
+            "Facebook"
+          ]}
+        />
+
+        <title>Yonathan Cahyadi - Contact</title>
+        <link rel="icon" href="/assets/favicon.ico" />
+      </Head>
+
       <Navbar selected="Contact" />
 
       <Content>
