@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
 
       <Content>
         <div className="contact-container">
-          <motion.h1 {...FadeInAndRight(0, 2, 1)}>Contact</motion.h1>
+          <motion.h1 {...FadeInAndRight(0, 1.5, 1)}>Contact</motion.h1>
           <Form.Wrapper>
             <Form.Input
               name="email"

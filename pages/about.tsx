@@ -45,7 +45,7 @@ const About: React.FC = () => {
       <Content>
         <div className="about-container">
           <div className="about-text-container">
-            <motion.h1 {...FadeInAndRight(0, 2, 1)}>About Me</motion.h1>
+            <motion.h1 {...FadeInAndRight(0, 1.5, 1)}>About Me</motion.h1>
             <motion.div {...FadeIn(4)}>
               My name is <b>Yonathan Cahyadi</b> and I have a degree in Bachelor of
               Information Technology (Computer Science). I am a{" "}
@@ -65,7 +65,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="skills-container">
-            <motion.h1 {...FadeInAndRight(0, 2, 1)}>
+            <motion.h1 {...FadeInAndRight(0, 1.5, 1)}>
               Skills and Knowledge
             </motion.h1>
             <div className="skill-list-container">

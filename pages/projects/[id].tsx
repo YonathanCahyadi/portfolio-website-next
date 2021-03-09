@@ -73,16 +73,16 @@ const Project: React.FC<ProjectProps> = ({
         <div className="project-container">
           <div className="project-inner-container">
             <div className="project-name">
-              <motion.h1 {...FadeInAndRight(0, 2, 0)}>{data.name}</motion.h1>
+              <motion.h1 {...FadeInAndRight(0, 1.5, 0)}>{data.name}</motion.h1>
             </div>
-            <motion.div className="project-description" {...FadeIn(4)}>
+            <motion.div className="project-description" {...FadeIn(2)}>
               <div className="project-date">
                 <sub>{data.date}</sub>
               </div>
               {data.description}
             </motion.div>
             <div className="project-techs">
-              <motion.h3 {...FadeInAndRight(0, 2, 0)}>
+              <motion.h3 {...FadeInAndRight(0, 1.5, 0)}>
                 Used Technology
               </motion.h3>
               <ul className="project-techs-list">
@@ -90,7 +90,7 @@ const Project: React.FC<ProjectProps> = ({
                   <motion.li
                     className="project-tech"
                     key={`tech-${idx}`}
-                    {...FadeInAndUp(0, 1, 1.5 + idx / 5)}
+                    {...FadeInAndUp(0, .5, idx / 5)}
                   >
                     {tech}
                   </motion.li>
