@@ -23,9 +23,12 @@ const About: React.FC = () => {
     "NextJS",
     "PostgreSQL",
     "MongoDB",
+    "GraphQL",
     "AWS EC2",
     "Docker",
-    "Git/Github"
+    "Git/Github",
+    "Webpack",
+    "Babel"
   ];
 
   return (
