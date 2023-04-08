@@ -1,0 +1,28 @@
+
+.projects-page {
+    display: grid;
+
+
+    width: 100%;
+    height: 100%;
+
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+}
+
+.projects-card {
+
+
+    width: 100%;
+    height: 100%;
+
+    grid-column: 4/8;
+    grid-row: 2/10;
+    
+
+}
+
+.heading {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}

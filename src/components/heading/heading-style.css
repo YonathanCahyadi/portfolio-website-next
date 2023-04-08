@@ -1,0 +1,7 @@
+@import "../../style.css";
+
+.page-heading {
+
+  position: absolute;
+  border-bottom: 5px solid var(--sub-color);
+}

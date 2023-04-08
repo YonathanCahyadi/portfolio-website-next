@@ -1,0 +1,21 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --darker-color: #39374d;
+    --sub-darker-color: #39374d49;
+    --lighter-color: #f2f2f2;
+
+    --sub-color: #75aadc;
+
+    --scroll-bar-lighter-color: #cccccc;
+    --scroll-bar-darker-color: #39374d;
+    --scroll-bar-sub-darker-color: #39374d49;
+
+    --border-radius: 5px;
+
+    --font: "Poppins", "sans-serif";
+}
