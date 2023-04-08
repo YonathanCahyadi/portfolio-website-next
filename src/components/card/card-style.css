@@ -1,0 +1,230 @@
+@import "../../style.css";
+
+
+
+
+
+.card-container {
+  border-radius: 5px;
+  
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: repeat(10, 10%);
+
+  background-color: var(--lighter-color);
+  color: var(--darker-color);
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 50vw;
+  height: 70vh;
+
+  overflow: auto;
+
+  padding: 10px;
+}
+
+.common {
+  border: 2px solid var(--sub-darker-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px 5px;
+}
+
+.card-date {
+  opacity: 0.5;
+  text-align: right;
+  margin: 2px 0px;
+
+}
+
+.card-name-heading {
+  padding: 0px 5px;
+  color: #39374da2;
+}
+
+
+.card-tech-icon {
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+}
+
+
+.card-tech-items {
+  display: flex;
+  overflow: auto;
+}
+
+.card-tech-item {
+  border: 1px solid var(--sub-darker-color);
+  border-radius: var(--border-radius);
+
+  list-style: none;
+
+  margin: 5px 5px;
+  padding: 5px 5px;
+
+  text-align: center;
+}
+
+.card-github {
+
+}
+
+.card-github-link {
+  word-wrap: break-word;
+}
+
+
+.card-website-link {
+  word-wrap: break-word;
+}
+
+.card-sample-items {
+  display: flex;
+  overflow: auto;
+}
+
+.card-sample-item {
+  border: 1px solid var(--sub-darker-color);
+  border-radius: var(--border-radius);
+
+  list-style: none;
+
+  margin: 5px 5px;
+  padding: 5px 5px;
+
+  text-align: center;
+}
+
+.card-sample-img {
+  padding: 10px;
+  height: 100px;
+  width: 150px;
+  border-radius: var(--border-radius);
+}
+
+.card-sample-img:hover {
+  position: absolute;
+  display: block;
+
+  padding: 0px;
+
+  z-index: 10;
+
+  border-radius: 0px;
+
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+
+  -ms-transform: scale(8); /* IE 9 */
+  -webkit-transform: scale(8); /* Safari and Chrome */
+}
+
+
+
+
+.outer-cards-container {
+  display: grid;
+
+  grid-template-columns: repeat(11, 10%);
+  grid-template-rows: repeat(11, 10%);
+}
+
+.arrow-common {
+  filter: invert(84%) sepia(2%) saturate(28%) hue-rotate(324deg) brightness(94%)
+    contrast(103%);
+
+  cursor: pointer;  
+}
+
+.arrow-common:hover {
+  filter: invert(85%) sepia(32%) saturate(4926%) hue-rotate(180deg)
+    brightness(92%) contrast(87%);
+}
+
+
+
+.arrow-left {
+  grid-column: -11/-12;
+  grid-row: 5/7;
+  transform: rotate(180deg) scale(0.5);
+}
+
+.arrow-right {
+  grid-column: 11/12;
+  grid-row: 5/7;
+  transform: scale(0.5);
+}
+
+.cards-container {
+  grid-column: 2/11;
+  grid-row: 1/11;
+}
+
+.card-count {
+  grid-column: 5/8;
+  grid-row: 11/12;
+
+  text-align: center;
+  color: #cccccc;
+}
+
+/** customize all the scroll bar inside the card */
+
+/** scroll bar */
+.card-container::-webkit-scrollbar,
+.card-tech-items::-webkit-scrollbar,
+.card-github::-webkit-scrollbar,
+.card-description::-webkit-scrollbar {
+  width: 5px; /** for vertical bar */
+  height: 5px; /** for horizontal bar */
+}
+
+/** scroll track */
+.card-container::-webkit-scrollbar-track,
+.card-tech-items::-webkit-scrollbar-track,
+.card-github::-webkit-scrollbar-track,
+.card-description::-webkit-scrollbar-track {
+  background: var( --scroll-bar-lighter-color);
+  border-radius: var(--border-radius);
+}
+
+/** scroll thumb */
+.card-container::-webkit-scrollbar-thumb,
+.card-tech-items::-webkit-scrollbar-thumb,
+.card-github::-webkit-scrollbar-thumb,
+.card-description::-webkit-scrollbar-thumb {
+  background: var(--scroll-bar-sub-darker-color);
+  border-radius: var(--border-radius);
+}
+
+/** scroll thumb on Hover */
+.card-container::-webkit-scrollbar-thumb:hover,
+.card-tech-items::-webkit-scrollbar-thumb:hover,
+.card-github::-webkit-scrollbar-thumb:hover,
+.card-description::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-bar-darker-color);
+}
+
+
+@media screen and (max-width: 768px) {
+  .arrow-left {
+    grid-column: 4/5;
+    grid-row: 11/12;
+  }
+  
+  .arrow-right {
+    grid-column: 8/9;
+    grid-row: 11/12;
+  }
+  
+  .cards-container {
+    grid-column: 1/12;
+    grid-row: 1/11;
+  }
+}
